@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRISHNA BHEGADE | AI & DS Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* General Reset and Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff; /* Primary color for links */
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .bg-light {
+            background-color: #e9ecef;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .icon-header {
+            color: #007bff;
+            margin-right: 10px;
+        }
+
+        /* --- NAVIGATION BAR --- */
+        nav {
+            background: #ffffff;
+            color: #333;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.8em;
+            color: #007bff;
+            font-weight: 700;
+            transition: font-size 0.4s ease;
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li a {
+            color: #333;
+            padding: 10px 15px;
+            display: block;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #007bff;
+            background: #f0f0f0;
+        }
+
+        /* --- Navigation Styling When Scrolled --- */
+        nav.scrolled {
+            background-color: #ffffff; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow when scrolled */
+            padding: 10px 0; /* Slightly reduce padding */
+        }
+
+        nav.scrolled .logo {
+            font-size: 1.6em; /* Slightly smaller logo when scrolled */
+        }
+
+        /* --- 1. HOME / INTRODUCTION (HERO) --- */
+        .hero {
+            background: linear-gradient(135deg, #f0f8ff, #cfe7ff);
+            color: #1a1a1a;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero .greeting {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .hero .intro-text {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .hero .intro-text strong {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .hero .social-links a {
+            font-size: 1.8em;
+            margin: 0 10px;
+            color: #333;
+        }
+
+        .hero .social-links a:hover {
+            color: #007bff;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 12px 25px;
+            margin-top: 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* --- 2. ABOUT ME --- */
+        .about-info {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-info h3 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .contact-details p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .contact-details i {
+            color: #007bff;
+            margin-right: 8px;
+        }
+
+        /* --- 3. SKILLS --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .skill-category {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: #007bff;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .skill-category ul {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .skill-category li {
+            margin-bottom: 8px;
+        }
+
+
+        /* --- 4. PROJECTS --- */
+        .project-card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #007bff;
+        }
+
+        .project-card h3 {
+            color: #1a1a1a;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .project-card .tech-stack {
+            color: #555;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .project-card .project-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        .project-card .project-link i {
+            margin-left: 5px;
+        }
+
+        /* --- 5. CERTIFICATIONS & LINKS --- */
+        .cert-link-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .certifications, .links {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .certifications h3, .links h3 {
+            color: #007bff;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .certifications ul li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .certifications ul li i {
+            color: #ffc107; /* Gold color for achievements */
+            margin-right: 10px;
+        }
+
+        .links ul li {
+            margin-bottom: 10px;
+        }
+
+        .links ul li i {
+            color: #333;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        /* --- 6. CONTACT ME --- */
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .contact-details-large a {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #1a1a1a;
+        }
+
+        .contact-details-large a:hover {
+            background-color: #f0f8ff;
+            border-color: #007bff;
+            color: #007bff;
+        }
+
+        .contact-details-large i {
+            margin-right: 10px;
+            color: #007bff;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+        }
+
+        footer i {
+            margin: 0 3px;
+        }
+
+        /* --- Media Queries (Responsiveness) --- */
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                margin-top: 10px;
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .skills-grid, .project-card-container, .cert-link-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .certifications, .links {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <h1 class="logo">KRISHNA BHEGADE</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <p class="greeting">Hi, I’m</p>
+            <h1>KRISHNA SANTOSH BHEGADE </h1>
+            <p class="intro-text">
+                I am a B.Tech Student specializing in *Artificial Intelligence & Data Science (AI & DS)* at Zeal College of Engineering and Research. I have a strong passion for *Python, **Data Science, and **AI*, and I enjoy tackling real-world problems by building impactful projects.
+            </p>
+            <div class="social-links">
+                <a href="https://https://github.com/krishna32006/my-portfolio.git" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                               <a href="mailto:bhegadekrishna@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2><i class="fas fa-user-circle icon-header"></i> About Me</h2>
+            <div class="about-grid">
+                <div class="about-info">
+                    <h3>AI & DS Enthusiast | Second Year B.Tech</h3>
+                    <p>
+                        Currently in my Second Year, pursuing B.Tech in Artificial Intelligence & Data Science at Zeal College of Engineering and Research in Pune, Maharashtra. I am focused on mastering data analysis techniques, machine learning fundamentals, and practical Python development.
+                    </p>
+                    <div class="contact-details">
+                        <p><strong><i class="fas fa-graduation-cap"></i> Course:</strong> B.Tech in Artificial Intelligence & Data Science</p>
+                        <p><strong><i class="fas fa-map-marker-alt"></i> Location:</strong> Pune, Maharashtra</p>
+                        <p><strong><i class="fas fa-envelope"></i> Email:</strong> bhegadekrishna@gmail.com</p>
+                        <p><strong><i class="fas fa-phone"></i> Contact No.:</strong> 7620524012</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="bg-light section-padding">
+        <div class="container">
+            <h2><i class="fas fa-tools icon-header"></i> Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Python (Primary Focus)</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Science & AI Expertise</h3>
+                    <ul>
+                        <li>Machine Learning (Basics)</li>
+                        <li>Data Analysis (Pandas, NumPy)</li>
+                        <li>Data Visualization (Matplotlib, Power BI)</li>
+                        <li>SQL & Database Management</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <ul>
+                        <li>Jupyter Notebook, Google Colab</li>
+                        <li>Git & GitHub, VS Code</li>
+                        <li>Excel</li>
+                        <li>WordPress / Wix Website Creation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <h2><i class="fas fa-rocket icon-header"></i> Featured Projects</h2>
+            <div class="project-card-container">
+                
+                <div class="project-card">
+                    <h3>Plagiarism Detector</h3>
+                    <p class="tech-stack">*Tech Stack:* Python, NLP, ML, Streamlit</p>
+                    <p>Python-based plagiarism detection system. Analyzes text similarity using *TF-IDF* and *cosine similarity, performs **sentiment analysis* with NLTK, and supports text/PDF inputs. Includes a simple web interface built with Streamlit.</p>
+                    <a href="https://github.com/krishna32006/krishna32006" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                
+
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="bg-light section-padding">
+        <div class="container">
+            <h2><i class="fas fa-star icon-header"></i> Achievements & Links</h2>
+            <div class="cert-link-grid">
+                <div class="certifications">
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li><i class="fas fa-award"></i> data spy technology </li>
+                
+                    </ul>
+                </div>
+                <div class="links">
+                    <h3>Important Profiles</h3>
+                    <ul>
+                        <li><i class="fab fa-github"></i> <a href="https://github.com/krishna32006/krishna32006" target="_blank">GitHub Profile</a></li>
+                                              
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container contact-section">
+            <h2><i class="fas fa-paper-plane icon-header"></i> Contact Me</h2>
+            <p>Have a project idea or collaboration in mind? Feel free to reach out!</p>
+            <div class="contact-details-large">
+                <a href="mailto:bhegadekrishna@gmail.com"><i class="fas fa-envelope"></i> bhegadekrishna@gmail.com</a>
+                                <a href="https://github.com/krishna32006/krishna32006" target="_blank"><i class="fab fa-github"></i> View My GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 krishna bhegade | Designed using WordPress / Wix concepts.</p>
+            <p>Made with <i class="fas fa-heart" style="color: #ff4500;"></i> by an aspiring AI & DS Engineer.</p>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * 1. SMOOTH SCROLLING FOR NAVIGATION LINKS
+         */
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Only apply smooth scroll if the link is a section ID link
+                if (this.getAttribute('href').length > 1) { 
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // Scroll the target element into view smoothly
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+
+        /**
+         * 2. NAVIGATION BAR STYLING ON SCROLL
+         */
+        const navBar = document.querySelector('nav');
+        const scrollThreshold = 50; // Distance in pixels scrolled before the class is added
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > scrollThreshold) {
+                // If scrolled down past the threshold
+                navBar.classList.add('scrolled');
+            } else {
+                // If at the top of the page
+                navBar.classList.remove('scrolled');
+            }
+        });
+    </script>
+    
+</body>
+</html>
